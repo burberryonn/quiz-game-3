@@ -33,3 +33,23 @@ class QuizController {
       }); 
   } 
 }
+
+addQuestion(text, options, correctAnswerIndex) {
+    const question = { text, options, correctAnswerIndex };
+    this.model.addQuestion(question);
+}
+
+
+const model = new QuizModel();
+const view = new QuizView();
+const controller = new QuizController(model, view);
+
+controller.addQuestion('Что является столицей Франции?', ['Мадрид', 'Париж', 'Лондон', 'Рим'], 1);
+controller.addQuestion('Какое самое большое озеро в мире?', ['Озеро Байкал', 'Озеро Виктория', 'Озеро Танганьика', 'Озеро Супериор'], 1);
+controller.addQuestion('Сколько планет в Солнечной системе?', ['8', '9', '10', '7'], 0);
+controller.addQuestion('Сколько ОЛЕГ СЬЕСТ БУРГЕРЬЕВ?', ['100', '1000', '100000', 'INFINITY'], 3);
+
+controller.startQuiz();
+
+
+
