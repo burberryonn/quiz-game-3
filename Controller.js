@@ -32,22 +32,25 @@ class QuizController {
           }); 
       }); 
   } 
-}
-
-addQuestion(text, options, correctAnswerIndex) {
+  addQuestion(text, options, correctAnswerIndex) {
     const question = { text, options, correctAnswerIndex };
     this.model.addQuestion(question);
 }
+}
+
 
 
 const model = new QuizModel();
 const view = new QuizView();
 const controller = new QuizController(model, view);
 
-controller.addQuestion('Что является столицей Франции?', ['Мадрид', 'Париж', 'Лондон', 'Рим'], 1);
-controller.addQuestion('Какое самое большое озеро в мире?', ['Озеро Байкал', 'Озеро Виктория', 'Озеро Танганьика', 'Озеро Супериор'], 1);
-controller.addQuestion('Сколько планет в Солнечной системе?', ['8', '9', '10', '7'], 0);
-controller.addQuestion('Сколько ОЛЕГ СЬЕСТ БУРГЕРЬЕВ?', ['100', '1000', '100000', 'INFINITY'], 3);
+
+controller.addQuestion('\nВопрос: Что такое космический мусор?\n', ['Метеориты', 'Спутники', 'Человеческие космические аппараты', 'Остатки космических ракет\n'], 3);
+controller.addQuestion('\nКто был первым президентом США?\n', ['Джордж Вашингтон', 'Томас Джефферсон', 'Авраам Линкольн', 'Джон Адамс\n'], 0);
+controller.addQuestion('\n каком году состоялась Великая Французская революция?\n', ['1776', '1789', '1812', '1917\n'], 1);
+controller.addQuestion('\nСемь раз отмерь, один раз...\n', ['Запуш', 'Отреж', 'Закомить', 'Засплить\n'], 0);
+controller.addQuestion('\nКто учится в группе Тигры?\n', ['Пальма', 'Панин', 'Шпагат', 'Пага\n'], 3);
+controller.addQuestion('\nКакое животное может превысить скорость бега олимпийского чемпиона Усэйна Болта?\n', ['Страус', 'Гепард', 'Быстроходная черепаха', 'Ученик Эльбруса опаздывающий на утренний стендап\n'], 3);
 
 controller.startQuiz();
 
