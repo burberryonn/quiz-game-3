@@ -1,4 +1,4 @@
-const QuizModel = require('./model.js'); 
+const QuizModel = require('./Model.js'); 
 const QuizView = require('./View.js'); 
 const readline = require('readline'); 
 class QuizController { 
