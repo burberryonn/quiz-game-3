@@ -25,5 +25,5 @@ class QuizModel {
     isQuizFinished() { 
         return this.currentQuestionIndex >= this.questions.length; 
     } 
-  } 
+  }
   module.exports = QuizModel;
